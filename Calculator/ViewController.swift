@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         label.textColor = .whiteColor()
         label.backgroundColor = .blackColor()
         label.font = UIFont.systemFontOfSize(50)
+        label.adjustsFontSizeToFitWidth = true
     }
     
     func setUpEnterButton() {
@@ -97,7 +98,7 @@ class ViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFontOfSize(25)
         button.layer.borderColor = UIColor.blackColor().CGColor
         button.layer.borderWidth = 2
-        button.addTarget(self, action: "numberPressed", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: "numberPressed:", forControlEvents: .TouchUpInside)
     }
     
     func setUpMathOperatorButtons(button: UIButton, mathOperator: String) {
@@ -107,11 +108,10 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.orangeColor()
         button.layer.borderColor = UIColor.blackColor().CGColor
         button.layer.borderWidth = 2
-        button.addTarget(self, action: "operate", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: "operate:", forControlEvents: .TouchUpInside)
     }
     
     func setUpStackViews() {
-    
         
         let bottomRightStackView = UIStackView(arrangedSubviews: [enterButton, addButton])
         let bottomStackView = UIStackView(arrangedSubviews: [zeroButton, bottomRightStackView])
